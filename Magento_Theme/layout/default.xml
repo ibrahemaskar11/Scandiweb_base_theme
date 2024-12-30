@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+        <css src="css/custom.css" />
+    </head>
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
+                <argument name="logo_img_width" xsi:type="number">200</argument>
+                <argument name="logo_img_height" xsi:type="number">200</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header.panel.wrapper">
+            <container name="free.shipping.message" as="free-shipping-message" label="Free Shipping Message" htmlTag="div" htmlClass="free-shipping-container">
+                <block class="Magento\Framework\View\Element\Template" name="shipping.message.block" template="Magento_Theme::html/shipping_message.phtml" />
+            </container>
+        </referenceContainer>
+        <move element="free.shipping.message" destination="after.body.start" />
+        <move element="form.subscribe" destination="main.content" after="-" />
+        <referenceBlock name="form.subscribe">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Theme::html/custom_subscribe.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

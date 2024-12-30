@@ -1,0 +1,32 @@
+.form-subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.subscribe-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    max-width: 200px;
+    gap: 4px;
+    width: 100%;
+}
+
+.subscribe-form-container input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.subscribe-form-container button {
+    width: 100%;
+    padding: 5px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

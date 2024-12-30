@@ -1,0 +1,18 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+// Use dependency injection instead of Object Manager for better practice (if in a custom module/theme setup).
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$scopeConfig = $objectManager->get(\Magento\Framework\App\Config\ScopeConfigInterface::class);
+
+// Check if Free Shipping is enabled
+$isFreeShippingEnabled = $scopeConfig->isSetFlag(
+    'carriers/freeshipping/active',
+    \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+);
+
+if ($isFreeShippingEnabled): ?>
+    <div class="free-shipping-container" style="background-color: #f4f4f4; color: #000; text-align: center; padding: 20px 0; font-size: 16px; font-weight: bold; border-bottom: 1px solid #ddd;">
+        Free shipping for all orders.
+    </div>
+<?php endif; ?>
